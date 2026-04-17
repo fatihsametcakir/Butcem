@@ -659,12 +659,13 @@
   }
 
   // ─── FIRESTORE HELPERS ───
-  function docPath(col, id) {
-    return `${BASE_URL}/${uid}_${col}/${id}`;
-  }
-  function colPath(col) {
-    return `${BASE_URL}/${uid}_${col}`;
-  }
+  function docPath(collection, id) {
+  return `${BASE_URL}/users/${uid}/${collection}/${id}`;
+}
+
+function colPath(collection) {
+  return `${BASE_URL}/users/${uid}/${collection}`;
+}
 
   async function fsGet(path) {
     const r = await fetch(path, { headers: { Authorization: `Bearer ${idToken}` } });
